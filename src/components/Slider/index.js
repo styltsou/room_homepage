@@ -14,11 +14,13 @@ const Wrapper = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  height: 100%;
-  aspect-ratio: calc(5 / 3);
+  grid-area: slider-image;
+  overflow: hidden;
+  /* aspect-ratio: calc(5 / 3); */
 `;
 
 const DescriptionWrapper = styled.div`
+  grid-area: slider-text;
   position: relative;
   display: flex;
 `;
@@ -27,8 +29,8 @@ const SquareButton = styled.button`
   background-color: var(--color-black);
   border: none;
   color: white;
-  width: calc(100vw / 13.5);
-  height: calc(100vw / 13.5);
+  width: calc(100vw / 14);
+  height: calc(100vw / 14);
   transition: background-color 0.1s ease-out;
   font-size: 8rem;
   line-height: 80%;
@@ -47,7 +49,7 @@ const ButtonWrapper = styled.div`
 
 export default function Slider() {
   return (
-    <Wrapper>
+    <>
       <ImageWrapper>
         <StaticImage
           src="../../images/slider/slider-1.jpg"
@@ -64,6 +66,6 @@ export default function Slider() {
           </SquareButton>
         </ButtonWrapper>
       </DescriptionWrapper>
-    </Wrapper>
+    </>
   );
 }

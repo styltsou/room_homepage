@@ -10,9 +10,10 @@ const NavLink = styled.li`
   color: var(--color-white);
   font-size: 2rem;
   letter-spacing: 1px;
+  cursor: pointer;
 
   &:not(:last-child) {
-    margin-right: 2rem;
+    margin-right: 2.5rem;
   }
 `;
 

@@ -2,39 +2,45 @@ import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  width: 100%;
-  grid-row: 3 / span 2;
-  grid-column: span 2;
-  width: 100%;
-  display: flex
-  align-items: center;
-  justify-content: space-between;
-  flex: 1;
-`;
+// const Wrapper = styled.div`
+//   width: 100%;
+//   width: 100%;
+//   display: flex
+//   align-items: center;
+//   justify-content: space-between;
+//   flex: 1;
+// `;
 
 const ImageWrapper = styled.div`
-  height: 100%;
-  aspect-ratio: calc(5 / 3);
+  /* height: 100%; */
+  /* aspect-ratio: calc(5 / 3); */
+
+  /* &:nth-child(3) {
+    grid-area: about-dark;
+  }
+
+  &:nth-child(5) {
+    grid-area: about-light;
+  } */
 `;
 
 const AboutWrapper = styled.div`
+  grid-area: about-paragraph;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: baseline;
-  max-width: 75rem;
+  padding: 1.5rem 5rem;
 
   & h2 {
     text-transform: uppercase;
     margin-bottom: 3rem;
     color: var(--color-black);
-    font-size: 3.4rem;
+    font-size: 3.2rem;
     letter-spacing: 4px;
   }
 
   & p {
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: 130%;
     color: var(--color-gray);
   }
@@ -42,8 +48,8 @@ const AboutWrapper = styled.div`
 
 export default function AboutSection() {
   return (
-    <Wrapper>
-      <ImageWrapper>
+    <>
+      <ImageWrapper style={{ gridArea: 'about-dark' }}>
         <StaticImage
           src="../../images/about/about-dark.jpg"
           alt="dark coffe table"
@@ -60,12 +66,12 @@ export default function AboutSection() {
           dream space.
         </p>
       </AboutWrapper>
-      <ImageWrapper>
+      <ImageWrapper style={{ gridArea: 'about-light' }}>
         <StaticImage
           src="../../images/about/about-light.jpg"
           alt="white chair"
         />
       </ImageWrapper>
-    </Wrapper>
+    </>
   );
 }
